@@ -1,3 +1,3 @@
 # Textventure v0.01a
 
-[Begin My Adventure!]()
+[Begin My Adventure!](page1)

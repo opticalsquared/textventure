@@ -5,5 +5,5 @@ You wake up in a room unknown to you. You're laying on a rough floor, with... a 
 
 What will you do?
 
-[Immediately Stand Up]()
-[Look at Floor]()
+[Immediately Stand Up]() or
+[Look at The Floor]()

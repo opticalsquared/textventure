@@ -1,9 +1,6 @@
 div {
     position: relative;
     left: 0px;
-    width: 300px;
+    width: 100%;
     background-color: tomato;
-    border: 0px solid green;
-    padding: 0px;
-    margin: 0px;
 }

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body>
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.02a</p>
   <select id="cool" style="filter:drop-shadow(5px 5px 5px);">
     <option value="a">Chapter I</option>
     <option value="b" hidden>Chapter II</option>
@@ -9,11 +8,27 @@
     <option value="d" hidden>Chapter IV</option>
     <option value="e" hidden>Chapter V</option>
   </select>
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.02a</p>
+  <p hidden id="docText"></p>
+<button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
+<button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
+<button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
+<button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
     var page = 1;
+    var text = "chp1";
+    document.getElementById("docText").innerHTML = text;
     document.getElementById("title").innerHTML = "TEXTVENTURE v0.02a" +page;
     var pagebutton = 
     document.getElementsByTagName("body")[0].appendChild();
+    function input1() {
+      if (document.getElementsById("Buttonop1").innerHTML == "Begin") {
+      document.getElementsById("Buttonop1").hidden = false;
+      document.getElementsById("Buttonop2").hidden = false;
+      document.getElementsById("Buttonop3").hidden = false;
+      document.getElementsById("Buttonop4").hidden = false;
+      }
+    }
   </script>
 </body>
 </html>

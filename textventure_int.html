@@ -4,20 +4,21 @@
   <title>TEXTVENTURE Interactive</title>
   </head>
 <body>
-  <select id="cool" style="filter:drop-shadow(5px 5px 5px);">
+  <select id="chsel" style="filter:drop-shadow(5px 5px 5px);">
     <option value="a" style="background-color:#99ff99;">Chapter I</option>
     <option value="b" hidden>Chapter II</option>
     <option value="c" hidden>Chapter III</option>
     <option value="d" hidden>Chapter IV</option>
     <option value="e" hidden>Chapter V</option>
   </select>
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.06a</p>
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.061a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
 <button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
+    alert(document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value);
     var text = "chp1";
     document.getElementById("docText").innerHTML = text;
     function input1() {

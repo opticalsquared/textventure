@@ -19,8 +19,9 @@
 <button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
-    wow = document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value;
     function ch1() {
+    wow = document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value;
+      if (wow == "a") {
       document.getElementById("docText").hidden = false;
       document.getElementById("docText").innerHTML = "You wake up in a room unknown to you. You're laying on a rough floor, with... a slimy feeling?\
 \
@@ -34,11 +35,12 @@ What will you do?";
       document.getElementById("Buttonop3").innerHTML = "Unused";
       document.getElementById("Buttonop4").hidden = false;
       document.getElementById("Buttonop4").disabled = true;
-      document.getElementById("Buttonop4").innerHTML = "Unused";
-    }
+      document.getElementById("Buttonop4").innerHTML = "Unused";}
+    };
     var text = "chp1";
     document.getElementById("docText").innerHTML = text;
     function input1() {
+      ch1();
       if (document.getElementById("Buttonop1").innerHTML == "Begin") {
       document.getElementById("docText").hidden = false;
       document.getElementById("docText").innerHTML = "You wake up in a room unknown to you. You're laying on a rough floor, with... a slimy feeling?\

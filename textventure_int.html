@@ -17,9 +17,9 @@
   <script>
     var page = 1;
     var text = "chp1";
-    page = page.toString();
+    var pager = page.toString();
     document.getElementById("docText").innerHTML = text;
-    document.getElementById("title").innerHTML = "TEXTVENTURE v0.02a" +page;
+    document.getElementById("title").innerHTML = "TEXTVENTURE v0.02a" +pager;
     function input1() {
       if (document.getElementById("Buttonop1").innerHTML == "Begin") {
       document.getElementById("docText").hidden = false;

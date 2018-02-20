@@ -5,20 +5,37 @@
   </head>
 <body>
   <select id="chsel" style="filter:drop-shadow(5px 5px 5px);">
-    <option value="a" style="background-color:#99ff99;">Chapter I</option>
+    <option value="ns" style="background-color:#99ff99;">Not Selected</option>
+    <option value="a" style="background-color:#99ff99;" onclick="ch1()">Chapter I</option>
     <option value="b" hidden>Chapter II</option>
     <option value="c" hidden>Chapter III</option>
     <option value="d" hidden>Chapter IV</option>
     <option value="e" hidden>Chapter V</option>
   </select>
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.6.1a</p>
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.6.2a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
 <button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
-    alert(document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value);
+    wow = document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value;
+    function ch1() {
+      document.getElementById("docText").hidden = false;
+      document.getElementById("docText").innerHTML = "You wake up in a room unknown to you. You're laying on a rough floor, with... a slimy feeling?\
+\
+What will you do?";
+      document.getElementById("Buttonop1").hidden = false;
+      document.getElementById("Buttonop1").innerHTML = "Immediately Look Up";
+      document.getElementById("Buttonop2").hidden = false;
+      document.getElementById("Buttonop2").innerHTML = "Look At The Floor";
+      document.getElementById("Buttonop3").hidden = false;
+      document.getElementById("Buttonop3").disabled = true;
+      document.getElementById("Buttonop3").innerHTML = "Unused";
+      document.getElementById("Buttonop4").hidden = false;
+      document.getElementById("Buttonop4").disabled = true;
+      document.getElementById("Buttonop4").innerHTML = "Unused";
+    }
     var text = "chp1";
     document.getElementById("docText").innerHTML = text;
     function input1() {

@@ -15,18 +15,25 @@
 <button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
-    var page = 1;
+    var page = "TEXTADVENTURE v0.04a";
     var text = "chp1";
-    var pager = page.toString();
     document.getElementById("docText").innerHTML = text;
-    document.getElementById("title").innerHTML = "TEXTVENTURE v0.02a" +pager;
+    document.getElementById("title").innerHTML = page;
     function input1() {
       if (document.getElementById("Buttonop1").innerHTML == "Begin") {
       document.getElementById("docText").hidden = false;
+      document.getElementById("docText").innerHTML = "You wake up in a room unknown to you. You're laying on a rough floor, with... a slimy feeling?\
+\
+What will you do?";
       document.getElementById("Buttonop1").hidden = false;
+      document.getElementById("Buttonop1").innerHTML = "Immediately Look Up";
       document.getElementById("Buttonop2").hidden = false;
+      document.getElementById("Buttonop2").innerHTML = "Look At The Floor";
       document.getElementById("Buttonop3").hidden = false;
-      document.getElementById("Buttonop4").hidden = false;
+      document.getElementById("Buttonop3").disabled = true;
+      document.getElementById("Buttonop3").innerHTML = "Unused";
+      document.getElementById("Buttonop4").disabled = true;
+      document.getElementById("Buttonop4").innerHTML = "Unused";
       }
     }
   </script>

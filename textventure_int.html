@@ -11,15 +11,16 @@
     <option value="c" hidden>Chapter III</option>
     <option value="d" hidden>Chapter IV</option>
     <option value="e" hidden>Chapter V</option>
-  </select>
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.6.3a</p>
+  </select><button id="ChG" type="button" onclick="ch()" style="position:relative;left:10%; background-color:#aaaaaa;border-color:#dddddd; width:75%">Go</button>
+
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.7.0a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
 <button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
-    function ch1() {
+    function ch() {
     wow = document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value;
       if (wow == "a") {
       document.getElementById("docText").hidden = false;

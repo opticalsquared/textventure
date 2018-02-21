@@ -37,11 +37,12 @@ What will you do?";
       document.getElementById("Buttonop4").hidden = false;
       document.getElementById("Buttonop4").disabled = true;
       document.getElementById("Buttonop4").innerHTML = "Unused";}
+      wow = "ns";
     };
     var text = "chp1";
     document.getElementById("docText").innerHTML = text;
     function input1() {
-      ch1();
+      ch();
       if (document.getElementById("Buttonop1").innerHTML == "Begin") {
       document.getElementById("docText").hidden = false;
       document.getElementById("docText").innerHTML = "You wake up in a room unknown to you. You're laying on a rough floor, with... a slimy feeling?\
@@ -58,11 +59,19 @@ What will you do?";
       document.getElementById("Buttonop4").disabled = true;
       document.getElementById("Buttonop4").innerHTML = "Unused";
       } else if (document.getElementById("Buttonop1").innerHTML == "Immediately Look Up") {
+      document.getElementById("docText").innerHTML = "You stand up with surprising speed, considering that you just woke up. The room is oddly humid, with an unusually foul scent. There's a light in the distance.";
+      document.getElementById("Buttonop1").innerHTML = "Go pick up the light.";
+      document.getElementById("Buttonop2").innerHTML = "Go back to sleep.";
+      }
+    }
+    function input2() {
+      ch();
+      if (document.getElementById("Buttonop1").innerHTML == "Look At The Floor") {
       document.getElementById("docText").innerHTML = "You turn around to look at the ground and... \
 What do you know, you can't see it. You can't see anything, actually. Other than the light in the distance. \
 \
 Oh what will you do?";
-      document.getElementById("Buttonop1").innerHTML = "Go towards the light";
+      document.getElementById("Buttonop1").innerHTML = "Go towards the light.";
       document.getElementById("Buttonop2").innerHTML = "Go back to sleep. This is fine.";
       }
     }

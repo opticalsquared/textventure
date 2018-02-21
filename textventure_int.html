@@ -4,16 +4,16 @@
   <title>TEXTVENTURE Interactive</title>
   </head>
 <body>
-  <select id="chsel" style="filter:drop-shadow(5px 5px 5px);">
+  <select id="chsel" style="filter:drop-shadow(5px 5px 5px);position:relative;left:0.5%;width:9%;">
     <option value="ns" style="background-color:#99ff99;">Not Selected</option>
-    <option value="a" style="background-color:#99ff99;" onclick="ch1()">Chapter I</option>
+    <option value="a" style="background-color:#99ff99;" onclick="ch1()" selected>Chapter I</option>
     <option value="b" hidden>Chapter II</option>
     <option value="c" hidden>Chapter III</option>
     <option value="d" hidden>Chapter IV</option>
     <option value="e" hidden>Chapter V</option>
-  </select><button id="ChG" type="button" onclick="ch()" style="position:relative;left:10%; background-color:#aaaaaa;border-color:#dddddd; width:75%">Go</button>
+  </select><button id="ChG" type="button" onclick="ch()" style="position:relative;left:10%; background-color:#aaaaaa;border-color:#dddddd; width:90%">Go</button>
 
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.7.3a</p>
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.7.4a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
 <button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>

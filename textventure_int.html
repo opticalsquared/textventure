@@ -12,7 +12,7 @@
     <option value="d" hidden>Chapter IV</option>
     <option value="e" hidden>Chapter V</option>
   </select><button id="ChG" type="button" onclick="ch()" style="position:relative;left:3%; background-color:#aaaaaa;border-color:#dddddd; width:10%">Go</button>
-
+<progress min="0" max="1" value="0" id="endings" style="position:relative;width:98%;left:1%;">ENDINGS</progress>
 <p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.8.5a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
@@ -21,6 +21,8 @@
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
     var inv = [];
+    var endings = {};
+    var fail = true;
     function ch() {
     wow = document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value;
       if (wow == "a") {
@@ -94,6 +96,15 @@ to do nothing? Well, let's see... oh, the story ends there.";
         document.getElementById("Buttonop2").disabled = true;
         document.getElementById("Buttonop3").disabled = true;
         document.getElementById("Buttonop4").disabled = true;
+        fail = false;
+        for (i == 0; i < endings; i++) {
+          if (endings[i] == "sleep") {
+            fail = true;
+          }
+        }
+        if (fail == false) {
+        document.getElementById("endings").value++;
+        }
       }
     }
   </script>

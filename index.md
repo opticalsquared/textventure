@@ -1,5 +1,6 @@
-# Textventure v0.01a
+# Textventure v0.8.Xa
+## Incomplete
 
-[Begin My Adventure!](page1)
+[Begin My Adventure!](textventure_int)
 
 [Interactive Mode](textventure_int)

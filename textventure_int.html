@@ -13,13 +13,14 @@
     <option value="e" hidden>Chapter V</option>
   </select><button id="ChG" type="button" onclick="ch()" style="position:relative;left:3%; background-color:#aaaaaa;border-color:#dddddd; width:10%">Go</button>
 
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.7.7a</p>
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.8.3a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
 <button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
+    var inv = [];
     function ch() {
     wow = document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value;
       if (wow == "a") {
@@ -48,8 +49,10 @@ What will you do?";
 \
 What will you do?";
       document.getElementById("Buttonop1").hidden = false;
+      document.getElementById("Buttonop1").disabled = false;
       document.getElementById("Buttonop1").innerHTML = "Immediately Look Up";
       document.getElementById("Buttonop2").hidden = false;
+      document.getElementById("Buttonop2").disabled = false;
       document.getElementById("Buttonop2").innerHTML = "Look At The Floor";
       document.getElementById("Buttonop3").hidden = false;
       document.getElementById("Buttonop3").disabled = true;
@@ -61,6 +64,11 @@ What will you do?";
       document.getElementById("docText").innerHTML = "You stand up with surprising speed, considering that you just woke up. The room is oddly humid, with an unusually foul scent. There's a light in the distance.";
       document.getElementById("Buttonop1").innerHTML = "Go pick up the light.";
       document.getElementById("Buttonop2").innerHTML = "Go back to sleep.";
+      } else if (document.getElementById("Buttonop1").innerHTML == "Go pick up the light.") {
+        document.GetElementById("docText").innerHTML = "You go towards the light, as though you already understand what it is. It's a bit red and... sticky.\n\n+Flashlight";
+        inv.push("Flashlight");
+        document.getElementById("Buttonop1").InnerHTML = "Use the Light.";
+        document.getElementById("Buttonop2").InnerHTML = "Go back to sleep.";
       }
     }
     function input2() {
@@ -71,6 +79,19 @@ What do you know, you can't see it. You can't see anything, actually. Other than
 Oh what will you do?";
       document.getElementById("Buttonop1").innerHTML = "Go towards the light.";
       document.getElementById("Buttonop2").innerHTML = "Go back to sleep. This is fine.";
+      } else if (document.getElementById("Buttonop2").innerHTML == "Go towards the light.") {
+        document.GetElementById("docText").innerHTML = "You walk closer to the light and see that... there's a flashlight on the ground! You obviously pick in the flashlight.\n\n+Flashlight";
+        inv.push("Flashlight");
+        document.getElementById("Buttonop1").InnerHTML = "Use the Light.";
+        document.getElementById("Buttonop2").InnerHTML = "Go back to sleep. This is fine.";
+      } else if (document.getElementById("Buttonop2").innerHTML == "Go back to sleep." ||document.getElementById("Buttonop2").innerHTML == "Go back to sleep. This is fine.") {
+        document.GetElementById("docText").innerHTML = "You... go to sleep? Really? You're just going to stay here? You're just going \
+to do nothing? Well, let's see... oh, the story ends there.";
+        inv.push("Flashlight");
+        document.getElementById("Buttonop1").disabled = true;
+        document.getElementById("Buttonop2").disabled = true;
+        document.getElementById("Buttonop3").disabled = true;
+        document.getElementById("Buttonop4").disabled = true;
       }
     }
   </script>

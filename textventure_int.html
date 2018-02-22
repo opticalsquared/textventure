@@ -13,7 +13,7 @@
     <option value="e" hidden>Chapter V</option>
   </select><button id="ChG" type="button" onclick="ch()" style="position:relative;left:3%; background-color:#aaaaaa;border-color:#dddddd; width:10%">Go</button>
 <progress min="0" max="1" value="0" id="endings" style="position:relative;width:98%;left:1%;">ENDINGS</progress>
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.8.7a</p>
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.10.0a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
 <button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
@@ -71,9 +71,22 @@ What will you do?";
       } else if (document.getElementById("Buttonop1").innerHTML == "Go pick up the light.") {
         document.getElementById("docText").innerHTML = "You go towards the light, as though you already understand what it is. It's a bit red and... sticky.\n\n+Flashlight";
         inv.push("Flashlight");
-        document.getElementById("Buttonop1").InnerHTML = "Use the Light.";
-        document.getElementById("Buttonop2").InnerHTML = "Go back to sleep.";
-      }
+        document.getElementById("Buttonop1").innerHTML = "Use the Light.";
+        document.getElementById("Buttonop2").innerHTML = "Go back to sleep.";
+      } else if (document.getElementById("Buttonop1").innerHTML == "Use the Light.") {
+        document.getElementById("docText").innerHTML = "You hold out the flashlight to look around the room. It doesn't \
+look like there's an exit. You think for a moment.";
+        inv.shift();
+        document.getElementById("Buttonop1").innerHTML = "Feel around the walls.";
+        document.getElementById("Buttonop2").innerHTML = "Feel around the floor.";
+      } else if (document.getElementById("Buttonop1").innerHTML == "Feel around the walls.") {
+        document.getElementById("docText").innerHTML = "You feel around the walls, and find an indent. It's almost small enough to fit the flashlight perfectly.";
+        document.getElementById("Buttonop1").innerHTML = "Insert the Flashlight.";
+        document.getElementById("Buttonop2").disabled = true;
+      } else if (document.getElementById("Buttonop1").innerHTML == "Insert the Flashlight.") {
+        document.getElementById("docText").innerHTML = "You put the flashlight into the indention in the wall. The wall... opens up!";
+        document.getElementById("Buttonop1").innerHTML = "Insert the Flashlight.";
+        document.getElementById("Buttonop2").disabled = false;
     }
     function input2() {
       if (document.getElementById("Buttonop2").innerHTML == "Look At The Floor") {
@@ -86,8 +99,8 @@ Oh what will you do?";
       } else if (document.getElementById("Buttonop2").innerHTML == "Go towards the light.") {
         document.getElementById("docText").innerHTML = "You walk closer to the light and see that... there's a flashlight on the ground! You obviously pick in the flashlight.\n\n+Flashlight";
         inv.push("Flashlight");
-        document.getElementById("Buttonop1").InnerHTML = "Use the Light.";
-        document.getElementById("Buttonop2").InnerHTML = "Go back to sleep. This is fine.";
+        document.getElementById("Buttonop1").innerHTML = "Use the Light.";
+        document.getElementById("Buttonop2").innerHTML = "Go back to sleep. This is fine.";
       } else if (document.getElementById("Buttonop2").innerHTML == "Go back to sleep." ||document.getElementById("Buttonop2").innerHTML == "Go back to sleep. This is fine.") {
         document.getElementById("docText").innerHTML = "You... go to sleep? Really? You're just going to stay here? You're just going \
 to do nothing? Well, let's see... oh, the story ends there.";
@@ -106,6 +119,8 @@ to do nothing? Well, let's see... oh, the story ends there.";
         if (fail == false) {
         document.getElementById("endings").value = document.getElementById("endings").value + 1;
         }
+      } else if (document.getElementById("Buttonop2").innerHTML == "Feel around the floor.") {
+        document.getElementById("docText").innerHTML = "You feel around the floor, but find nothing there. Strange. You go back to where you started, and think again.";
       }
     }
   </script>

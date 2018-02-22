@@ -16,15 +16,17 @@
 <progress min="0" max="1" value="0" id="endings" style="position:relative;width:98%;left:1%;">ENDINGS</progress>
 <p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.10.13a</p>
   <p hidden id="docText"></p>
-<button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%">Begin</button>
-<button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
+<button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#aaffaa; width:98%">Begin</button>
+<button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#aaffaa; width:98%" hidden>Begin</button>
 <button id="Buttonop3" type="button" onclick="input3()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
 <button id="Buttonop4" type="button" onclick="input4()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#dddddd; width:98%" hidden>Begin</button>
   <script>
     var inv = [];
     var endings = {};
+    var presses = 0;
     var fail = true;
     function ch() {
+    	presses++;
     wow = document.getElementById("chsel").options[ document.getElementById("chsel").selectedIndex ].value;
       if (wow == "a") {
       document.getElementById("docText").hidden = false;
@@ -48,6 +50,7 @@ What will you do?";
     var text = "chp1";
     document.getElementById("docText").innerHTML = text;
     function input1() {
+    	presses++;
       if (document.getElementById("Buttonop1").innerHTML == "Begin") {
       document.getElementById("docText").hidden = false;
       document.getElementById("docText").innerHTML = "You wake up in a room unknown to you. You're laying on a rough floor, with... a slimy feeling?\
@@ -70,12 +73,12 @@ What will you do?";
       document.getElementById("Buttonop1").innerHTML = "Go pick up the light.";
       document.getElementById("Buttonop2").innerHTML = "Go back to sleep.";
       } else if (document.getElementById("Buttonop1").innerHTML == "Go pick up the light.") {
-        document.getElementById("docText").innerHTML = "You go towards the light, as though you already understand what it is. It's a bit red and... sticky.\n\n+Flashlight";
+        document.getElementById("docText").innerHTML = "You go towards the light, as though you already understand what it is. It's a bit red and... sticky.    \n\n+Flashlight";
         inv.push("Flashlight");
         document.getElementById("Buttonop1").innerHTML = "Use the Light.";
         document.getElementById("Buttonop2").innerHTML = "Go back to sleep.";
       } else if (document.getElementById("Buttonop1").innerHTML == "Go towards the light.") {
-        document.getElementById("docText").innerHTML = "You walk closer to the light and see that... there's a flashlight on the ground! You obviously pick in the flashlight.\n\n+Flashlight";
+        document.getElementById("docText").innerHTML = "You walk closer to the light and see that... there's a flashlight on the ground! You obviously pick in the flashlight.    \n\n+Flashlight";
         inv.push("Flashlight");
         document.getElementById("Buttonop1").innerHTML = "Use the Light.";
         document.getElementById("Buttonop2").innerHTML = "Go back to sleep. This is fine.";
@@ -91,11 +94,15 @@ look like there's an exit. You think for a moment.";
         document.getElementById("Buttonop2").disabled = true;
       } else if (document.getElementById("Buttonop1").innerHTML == "Insert the Flashlight.") {
         document.getElementById("docText").innerHTML = "You put the flashlight into the indention in the wall. The wall... opens up!";
-        document.getElementById("Buttonop1").innerHTML = "Insert the Flashlight.";
-        document.getElementById("Buttonop2").disabled = false;
+        document.getElementById("Buttonop1").innerHTML = "Exit the room.";
+      } else if (document.getElementById("Buttonop1").innerHTML == "Exit the room.") {
+        document.getElementById("docText").innerHTML = "You leave the extremely humid room, just to find yourself in a forest or indeterminable scale. You're already getting tired of this.";
+        document.getElementById("Buttonop1").innerHTML = "Wander.";
+      }
     }
     }
     function input2() {
+    	presses++;
       if (document.getElementById("Buttonop2").innerHTML == "Look At The Floor") {
       document.getElementById("docText").innerHTML = "You turn around to look at the ground and... \
 What do you know, you can't see it. You can't see anything, actually. Other than the light in the distance. \

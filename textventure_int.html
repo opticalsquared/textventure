@@ -14,7 +14,7 @@
     <option value="e" style="background=color:#000000;">Chapter END</option>
   </select><button id="ChG" type="button" onclick="ch()" style="position:relative;left:3%; background-color:#aaaaaa;border-color:#dddddd; width:10%">Go</button>
 <progress min="0" max="1" value="0" id="endings" style="position:relative;width:98%;left:1%;">ENDINGS</progress>
-<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.11.0a</p>
+<p style="background-color:rgba(255,100,100,127);font-size:50px;font-family:Courier;" name="title">TEXTVENTURE v0.11.1a</p>
   <p hidden id="docText"></p>
 <button id="Buttonop1" type="button" onclick="input1()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#aaffaa; width:98%">Begin</button>
 <button id="Buttonop2" type="button" onclick="input2()" style="position:relative;left:1%; background-color:#aaaaaa;border-color:#aaffaa; width:98%" hidden>Begin</button>
@@ -99,7 +99,7 @@ look like there's an exit. You think for a moment.";
         document.getElementById("docText").innerHTML = "You leave the extremely humid room, just to find yourself in a forest or indeterminable scale. You're already getting tired of this.";
         document.getElementById("Buttonop1").innerHTML = "Wander.";
       } else if (document.getElementById("Buttonop1").innerHTML == "Wander.") {
-        document.getElementById("ch1c").selected = true;
+        document.getElementById("ch1c").selected = false;
         document.getElementById("ch2c").style = "background-color:#99ff99;";
         document.getElementById("ch2c").selected = true;
       }
